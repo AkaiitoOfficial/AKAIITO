@@ -1,6 +1,6 @@
 ![XCOIN](logo.png "XCOIN")
 
-# United Cyborgs smart contract
+# XCOIN smart contract
 
 * _Standart_        : ERC20
 * _Name_            : XCOIN
