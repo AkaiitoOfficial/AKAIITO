@@ -1,10 +1,9 @@
 pragma solidity 0.4.18;
 
-import './CommonSale.sol';
+import './XCOINCommonSale.sol';
 import './Mainsale.sol';
-import './RetreiveTokensFeature.sol';
 
-contract Presale is RetreiveTokensFeature, CommonSale {
+contract Presale is XCOINCommonSale {
 
   Mainsale public mainsale;
 
