@@ -14,9 +14,9 @@ contract InputAddressFeature {
     return address(result);
   }
 
-  function getRefererAddress() internal pure returns(address) {
+  function getInputAddress() internal pure returns(address) {
     if(msg.data.length == 20) {
-      return bytesToAddres(bytes(msg.data));
+      return bytesToAddress(bytes(msg.data));
     } 
     return address(0);
   }

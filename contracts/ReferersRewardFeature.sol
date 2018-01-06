@@ -1,33 +1,25 @@
 pragma solidity 0.4.18;
 
-import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
-import './PercentRateProvider.sol';
-import './TokenMintInterface.sol';
+import './CommonSale.sol';
+import './InputAddressFeature.sol';
 
 contract ReferersRewardFeature is InputAddressFeature, CommonSale {
 
-  uint public referersPercent;
+  uint public refererPercent;
 
-  function setReferersPercent(uint newReferersPercent) public onlyOwner {
-    referersPercent = newReferersPercent;
+  function setRefererPercent(uint newRefererPercent) public onlyOwner {
+    refererPercent = newRefererPercent;
   }
 
-  function calculateRefererValue(address excludedAddress, uint tokens) internal pure returns(address, uint) {
-    if(msg.data.length == 20) {
-      address referer = bytesToAddres(bytes(msg.data));
-      require(referer != excludedAddress && referer != msg.sender);
-      return (referer, tokens.mul(refererPercent).div(percentRate));
-    } 
-    return (0x0, 0);
-  }
-
-  function () public payable returns(uint) {
-    uint tokens = super.();
-    address referer = getRefererAddress();
-    require(referer != token && referer != msg.sender);
+  function fallback() internal returns(uint) {
+    uint tokens = super.fallback();
+    address referer = getInputAddress();
     if(referer != address(0)) {
-      mint(referer, tokens.mul(referersPercent).div(percentRate));
+      require(referer != address(token) && referer != msg.sender && referer != address(this));
+      mintTokens(referer, tokens.mul(refererPercent).div(percentRate));
     }
+    return tokens;
   }
 
 }
+

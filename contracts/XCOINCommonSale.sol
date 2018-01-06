@@ -1,14 +1,9 @@
 pragma solidity 0.4.18;
 
 import './ReferersRewardFeature.sol';
+import './RetrieveTokensFeature.sol';
 
-contract XCOINCommonSale is RetreiveTokensFeature, ReferersRewardFeature, CommonSale {
+contract XCOINCommonSale is RetrieveTokensFeature, ReferersRewardFeature {
 
-  function () public payable returns(uint) {
-    uint tokens = super.();
-    uint (referer, refererTokens) = calculateRefererValue(token, tokens);
-    if(refererTokens > 0) mint(referer, refererTokens);
-  }
-  
 }
 
