@@ -2,8 +2,9 @@ pragma solidity 0.4.18;
 
 import './CommonSale.sol';
 import './StagedCrowdsale.sol';
+import './RetreiveTokensFeature.sol';
 
-contract Mainsale is StagedCrowdsale, CommonSale {
+contract Mainsale is RetreiveTokensFeature, StagedCrowdsale, CommonSale {
 
   address public foundersTokensWallet;
   

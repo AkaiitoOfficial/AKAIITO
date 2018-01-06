@@ -2,8 +2,9 @@ pragma solidity 0.4.18;
 
 import './CommonSale.sol';
 import './Mainsale.sol';
+import './RetreiveTokensFeature.sol';
 
-contract Presale is CommonSale {
+contract Presale is RetreiveTokensFeature, CommonSale {
 
   Mainsale public mainsale;
 
