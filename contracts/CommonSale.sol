@@ -1,17 +1,16 @@
 pragma solidity 0.4.18;
 
 import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
+import './PercentRateProvider.sol';
 import './XCOINToken.sol';
 
-contract CommonSale is Ownable {
+contract CommonSale is PercentRateProvider, Ownable {
 
   using SafeMath for uint;
 
   address public wallet;
 
   address public directMintAgent;
-
-  uint public percentRate = 100;
 
   uint public price;
 
@@ -77,15 +76,17 @@ contract CommonSale is Ownable {
 
   function endSaleDate() public view returns(uint);
 
-  function mintTokensByETH(address to, uint _invested) public onlyDirectMintAgentOrOwner isUnderHardcap {
+  function mintTokensByETH(address to, uint _invested) public onlyDirectMintAgentOrOwner isUnderHardcap returns(uint) {
     invested = invested.add(_invested);
-    mintTokens(to, calculateTokens(_invested));
+    uint tokens = calculateTokens(_invested);
+    mintTokens(to, tokens);
+    return tokens;
   }
 
-  function () public payable minInvestLimited(msg.value) {
+  function () public payable minInvestLimited(msg.value) returns(uint) {
     require(now >= start && now < endSaleDate());
     wallet.transfer(msg.value);
-    mintTokensByETH(msg.sender, msg.value);
+    return mintTokensByETH(msg.sender, msg.value);
   }
   
 }
