@@ -62,6 +62,12 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 2. _Presale_ -
 3. _Mainsale_ -
 
+### Referal system
+* _Referer percent_ - 2%
+* _Minimal investor value limit to activate referer bonus_ - 10 ETH
+* _Limitations_ - Investor сan't accrue bonus to himself
+
+
 ### Value bonus system
 
 * from 100 ETH bonus +3%
