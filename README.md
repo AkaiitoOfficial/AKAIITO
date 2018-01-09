@@ -3,7 +3,7 @@
 # XCOIN smart contract
 
 * _Standart_        : ERC20
-* _Name_            : XCOIN
+* _Name_            : AIC
 * _Ticket_          : XCOIN
 * _Decimals_        : 18
 * _Emission_        : Mintable
@@ -48,7 +48,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 ## Main network configuration
 
 * _Minimal insvested limit_     : 0.1 ETH
-* _Price_                       : 1 ETH = 1000 UC17
+* _Price_                       : 1 ETH = 1000 XCOIN
 * _Bounty tokens percent_       : 5% of Presale tokens
 * _Founders tokens percent_     : 13% of Presale tokens
 * _For sale tokens percent_     : 82% of Presale tokens
@@ -59,6 +59,20 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 1. _Token_ -
 2. _Presale_ -
 3. _Mainsale_ -
+
+### Value bonus system
+
++5%
++8%
++10%
++15%
++20%
+from 100 ETH bonus +3%
+151 ETH bonus +5%
+201 ETH bonus +10%
+301 ETH bonus +15%
+1001 ETH bonus +20
+1501 ETH
 
 ### Crowdsale stages
 
