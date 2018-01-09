@@ -1,7 +1,8 @@
 pragma solidity 0.4.18;
 
+import 'zeppelin-solidity/contracts/math/SafeMath.sol';
 import './PercentRateProvider.sol';
-import './XCOINToken.sol';
+import './AICToken.sol';
 
 contract CommonSale is PercentRateProvider {
 
@@ -17,7 +18,7 @@ contract CommonSale is PercentRateProvider {
 
   uint public minInvestedLimit;
 
-  XCOINToken public token;
+  AICToken public token;
 
   uint public hardcap;
 
@@ -63,7 +64,7 @@ contract CommonSale is PercentRateProvider {
   }
 
   function setToken(address newToken) public onlyOwner {
-    token = XCOINToken(newToken);
+    token = AICToken(newToken);
   }
 
   function calculateTokens(uint _invested) internal returns(uint);

@@ -1,19 +1,19 @@
 pragma solidity 0.4.18;
 
-import './XCOINCommonSale.sol';
+import './AICCommonSale.sol';
 import './StagedCrowdsale.sol';
 
-contract Mainsale is StagedCrowdsale, XCOINCommonSale {
+contract Mainsale is StagedCrowdsale, AICCommonSale {
 
   address public foundersTokensWallet;
   
-  address public advertiseTokensWallet;
+  address public marketingTokensWallet;
   
   address public bountyTokensWallet;
   
   uint public foundersTokensPercent;
 
-  uint public advertiseTokensPercent;
+  uint public marketingTokensPercent;
   
   uint public bountyTokensPercent;
   
@@ -21,8 +21,8 @@ contract Mainsale is StagedCrowdsale, XCOINCommonSale {
     foundersTokensPercent = newFoundersTokensPercent;
   }
 
-  function setAdvertiseTokensPercent(uint newAdvertiseTokensPercent) public onlyOwner {
-    advertiseTokensPercent = newAdvertiseTokensPercent;
+  function setMarketingTokensPercent(uint newMarketingTokensPercent) public onlyOwner {
+    marketingTokensPercent = newMarketingTokensPercent;
   }
 
   function setBountyTokensPercent(uint newBountyTokensPercent) public onlyOwner {
@@ -33,8 +33,8 @@ contract Mainsale is StagedCrowdsale, XCOINCommonSale {
     foundersTokensWallet = newFoundersTokensWallet;
   }
 
-  function setAdvertiseTokensWallet(address newAdvertiseTokensWallet) public onlyOwner {
-    advertiseTokensWallet = newAdvertiseTokensWallet;
+  function setMarketingTokensWallet(address newMarketingTokensWallet) public onlyOwner {
+    marketingTokensWallet = newMarketingTokensWallet;
   }
 
   function setBountyTokensWallet(address newBountyTokensWallet) public onlyOwner {
@@ -50,14 +50,14 @@ contract Mainsale is StagedCrowdsale, XCOINCommonSale {
   }
 
   function finish() public onlyOwner {
-    uint summaryTokensPercent = bountyTokensPercent.add(foundersTokensPercent).add(advertiseTokensPercent);
+    uint summaryTokensPercent = bountyTokensPercent.add(foundersTokensPercent).add(marketingTokensPercent);
     uint mintedTokens = token.totalSupply();
     uint allTokens = mintedTokens.mul(percentRate).div(percentRate.sub(summaryTokensPercent));
     uint foundersTokens = allTokens.mul(foundersTokensPercent).div(percentRate);
-    uint advertiseTokens = allTokens.mul(advertiseTokensPercent).div(percentRate);
+    uint marketingTokens = allTokens.mul(marketingTokensPercent).div(percentRate);
     uint bountyTokens = allTokens.mul(bountyTokensPercent).div(percentRate);
     mintTokens(foundersTokensWallet, foundersTokens); 
-    mintTokens(advertiseTokensWallet, advertiseTokens); 
+    mintTokens(marketingTokensWallet, marketingTokens); 
     mintTokens(bountyTokensWallet, bountyTokens); 
     token.finishMinting();
   }

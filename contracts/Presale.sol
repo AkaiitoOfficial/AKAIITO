@@ -1,9 +1,9 @@
 pragma solidity 0.4.18;
 
-import './XCOINCommonSale.sol';
+import './AICCommonSale.sol';
 import './Mainsale.sol';
 
-contract Presale is XCOINCommonSale {
+contract Presale is AICCommonSale {
 
   Mainsale public mainsale;
 

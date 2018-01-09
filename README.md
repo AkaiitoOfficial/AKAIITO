@@ -77,14 +77,14 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Base price_                 : 1600 AIC per ETH
 * _Hardcap_                    : 1000 ETH
 * _Period_                     : 14 days 
-* _Start_                      : 
+* _Start_                      : Mon, 12 Feb 2018 00:00:00 GMT
 * _Wallet_                     : 
 * _Contract owner_             : 
 
 #### ICO
 * _Base price_                 : 1000 AIC per ETH
 * _Hardcap_                    : 20 000 ETH
-* _Start_                      : 
+* _Start_                      : Sat, 10 Mar 2018 00:00:00 GMT
 * _Wallet_                     : 
 * _Contract owner_             : 
 
