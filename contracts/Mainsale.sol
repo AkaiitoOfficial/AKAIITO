@@ -45,8 +45,11 @@ contract Mainsale is StagedCrowdsale, AICCommonSale {
     uint milestoneIndex = currentMilestone(start);
     Milestone storage milestone = milestones[milestoneIndex];
     uint tokens = _invested.mul(price).div(1 ether);
-    if(milestone.bonus > 0) tokens = tokens.add(tokens.mul(milestone.bonus).div(percentRate));
-    return tokens;
+    uint valueBonusTokens = getValueBonusTokens(tokens);
+    if(milestone.bonus > 0) {
+      tokens =  tokens.add(tokens.mul(milestone.bonus).div(percentRate));
+    }
+    return tokens.add(valueBonusTokens);
   }
 
   function finish() public onlyOwner {
