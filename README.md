@@ -1,10 +1,10 @@
-![XCOIN](logo.png "XCOIN")
+![AKAI](logo.png "AKAI")
 
 # XCOIN smart contract
 
 * _Standart_        : ERC20
 * _Name_            : AIC
-* _Ticket_          : XCOIN
+* _Ticket_          : AKAI
 * _Decimals_        : 18
 * _Emission_        : Mintable
 * _Crowdsales_      : 2
@@ -47,12 +47,14 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ## Main network configuration
 
-* _Minimal insvested limit_     : 0.1 ETH
-* _Price_                       : 1 ETH = 1000 XCOIN
-* _Bounty tokens percent_       : 5% of Presale tokens
-* _Founders tokens percent_     : 13% of Presale tokens
-* _For sale tokens percent_     : 82% of Presale tokens
+* _Minimal insvested limit_     : 0.01 ETH
+* _Price_                       : 1 ETH = 1000 AIC
+* _Bounty tokens percent_       : 2% 
+* _Founders tokens percent_     : 15% 
+* _Marketing tokens percent_    : 8% 
+* _For sale tokens percent_     : 75% 
 * _Founders tokens wallet_      :  
+* _Marketing tokens wallet_     :  
 * _Bounty tokens wallet_        : 
 
 ### Links
@@ -62,22 +64,17 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ### Value bonus system
 
-+5%
-+8%
-+10%
-+15%
-+20%
-from 100 ETH bonus +3%
-151 ETH bonus +5%
-201 ETH bonus +10%
-301 ETH bonus +15%
-1001 ETH bonus +20
-1501 ETH
+* from 100 ETH bonus +3%
+* from 151 ETH bonus +5%
+* from 201 ETH bonus +8%
+* from 301 ETH bonus +10%
+* from 1001 ETH bonus +15%
+* from 1501 ETH bonus +20%
 
 ### Crowdsale stages
 
 #### Presale
-* _Base price_                 : 1600 XOIN per ETH
+* _Base price_                 : 1600 AIC per ETH
 * _Hardcap_                    : 1000 ETH
 * _Period_                     : 14 days 
 * _Start_                      : 
@@ -85,7 +82,7 @@ from 100 ETH bonus +3%
 * _Contract owner_             : 
 
 #### ICO
-* _Base price_                 : 1000 XCOIN per ETH
+* _Base price_                 : 1000 AIC per ETH
 * _Hardcap_                    : 20 000 ETH
 * _Start_                      : 
 * _Wallet_                     : 
