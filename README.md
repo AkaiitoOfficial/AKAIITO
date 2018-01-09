@@ -1,6 +1,6 @@
 ![AKAI](logo.png "AKAI")
 
-# XCOIN smart contract
+# AKAIITO smart contract
 
 * _Standart_        : ERC20
 * _Name_            : AIC
