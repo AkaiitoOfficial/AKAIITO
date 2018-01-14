@@ -27,7 +27,7 @@ contract Presale is AICCommonSale {
   }
 
   function endSaleDate() public view returns(uint) {
-    return start.add(period);
+    return start.add(period * 1 days);
   }
 
 }

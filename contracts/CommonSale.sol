@@ -69,14 +69,22 @@ contract CommonSale is PercentRateProvider {
 
   function calculateTokens(uint _invested) internal returns(uint);
 
-  function mintTokens(address to, uint tokens) public onlyDirectMintAgentOrOwner {
+  function mintTokensExternal(address to, uint tokens) public onlyDirectMintAgentOrOwner {
+    mintTokens(to, tokens);
+  }
+
+  function mintTokens(address to, uint tokens) internal {
     token.mint(this, tokens);
     token.transfer(to, tokens);
   }
 
   function endSaleDate() public view returns(uint);
 
-  function mintTokensByETH(address to, uint _invested) public onlyDirectMintAgentOrOwner isUnderHardcap returns(uint) {
+  function mintTokensByETHExternal(address to, uint _invested) public onlyDirectMintAgentOrOwner returns(uint) {
+    return mintTokensByETH(to, _invested);
+  }
+
+  function mintTokensByETH(address to, uint _invested) internal isUnderHardcap returns(uint) {
     invested = invested.add(_invested);
     uint tokens = calculateTokens(_invested);
     mintTokens(to, tokens);
