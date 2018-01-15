@@ -22,7 +22,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "truffle test",
-    "flatten": "./node_modules/.bin/truffle-flattener ./contracts/Configurator.sol > ./deploy/contracts.sol"
+    "flatten": "./node_modules/.bin/truffle-flattener ./contracts/Configurator.sol > ./deploy/contracts.sol",
+    "flatten-token": "./node_modules/.bin/truffle-flattener ./contracts/AICToken.sol > ./deploy/AICToken.sol",
+    "flatten-presale": "./node_modules/.bin/truffle-flattener ./contracts/Presale.sol > ./deploy/Presale.sol",
+    "flatten-mainsale": "./node_modules/.bin/truffle-flattener ./contracts/Mainsale.sol > ./deploy/Mainsale.sol"
   },
   "repository": {
     "type": "git",
