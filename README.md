@@ -100,7 +100,7 @@ _Milestones_
 3. 7 days                      : bonus +20% 
 4. 7 days                      : bonus +10%
 4. 7 days                      : bonus +5%
-4. 7 days                      : wihtout bonus
+4. 7 days                      : without bonus
 
 ## Ropsten network configuration
 
@@ -138,7 +138,7 @@ _Milestones_
 
 #### Presale
 * _Base price_                 : 1600 AIC per ETH
-* _Hardcap_                    : 10 ETH
+* _Hardcap_                    : 5 ETH
 * _Period_                     : 14 days 
 * _Start_                      : Sun Jan 14 2018 16:00:00 GMT
 * _Wallet_                     : 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4
@@ -157,18 +157,31 @@ _Milestones_
 3. 7 days                      : bonus +20% 
 4. 7 days                      : bonus +10%
 4. 7 days                      : bonus +5%
-4. 7 days                      : wihtout bonus
+4. 7 days                      : without bonus
 
 ### Test audit (Presale)
 
 #### Purchasers
 * Rejected purchase below minimum investment limit (0.009 Eth), gas = 21321
 https://ropsten.etherscan.io/tx/0x461c52013465f89ada0ee78f7acec3fffa43ba3faf8d70182826605eec3426eb
-* 0.01 Eth => 19.2 tokens, gas = 122147
+* 0.01 Eth => 19.2 tokens (20% value bonus), gas = 122147
 https://ropsten.etherscan.io/tx/0x117843edfe9b5de0c4a0bc82ab001874767656d512ee0f28615843654fb4e8d5
-* 0.09 Eth => 172.8 tokens + 0 tokens to referrer, gas = 79382
+* 0.09 Eth => 172.8 tokens (20% value bonus) + 0 tokens to referrer, gas = 79382
 https://ropsten.etherscan.io/tx/0xc8c4baac250bed1fce4a279bc5c44aa0b895ea3df6f57f23a12358b2ba9bd466
-* 0.1 Eth => 192 tokens + 3.84 tokens to referrer, gas = 131657
+* 0.1 Eth => 192 tokens (20% value bonus) + 3.84 tokens to referrer, gas = 131657
 https://ropsten.etherscan.io/tx/0xf7cb39c3fda37561aeff1a9b1ec4c674aca7ed3c7d2ad80fa54927f0228bd110
 * Rejected purchase when investor accrued bonus to himself
 https://ropsten.etherscan.io/tx/0x898401bfc0959b7ff94b4d95f6b2c20b80a0aa42b88c69c16427e33f5cf5b223
+* 0.01 Eth => 1.68 tokens (5% value bonus, price = 160 AIC per ETH), gas = 74766
+https://ropsten.etherscan.io/tx/0xddfeccd4af4d58112a50730e9fe23df5e5b237c89e385f8bcb1c3a9acfcd503e
+* 0.0125625 Eth => 2.1708 tokens (8% value bonus, price = 160 AIC per ETH), gas = 73819
+https://ropsten.etherscan.io/tx/0x6eaa7456094d4b78583c9889bf50d1f3a0948018d16e61625f548f017a6289a3
+* 4.9 Eth => 940.8 tokens (20% value bonus, price = 160 AIC per ETH), gas = 77306
+https://ropsten.etherscan.io/tx/0x7fff57e70f5e0a3faabe6d5356a7ee06ad8ba3f224d7e6643aad796669491166
+* Rejected purchase when hardcap reached, gas = 30345
+https://ropsten.etherscan.io/tx/0x2adfbafbae066e138c2f7c9ffd9935db7117a8c8d2bef444abbe110f1022bc77
+
+#### Service operations
+* All operations from Deployer
+* finish(), gas = 30439
+https://ropsten.etherscan.io/tx/0x3799f807d864b2751c91e009d0ba1740c4efbc7053b9412a01ec87ee507b0b5c
