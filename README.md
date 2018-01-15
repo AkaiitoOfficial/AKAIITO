@@ -81,7 +81,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 #### Presale
 * _Base price_                 : 1600 AIC per ETH
-* _Hardcap_                    : 10 ETH
+* _Hardcap_                    : 1000 ETH
 * _Period_                     : 14 days 
 * _Start_                      : Mon, 12 Feb 2018 00:00:00 GMT
 * _Wallet_                     : 
@@ -89,8 +89,8 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 #### ICO
 * _Base price_                 : 1000 AIC per ETH
-* _Hardcap_                    : 
-* _Start_                      : 
+* _Hardcap_                    : 20 000 ETH
+* _Start_                      : Sat, 10 Mar 2018 00:00:00 GMT
 * _Wallet_                     : 
 * _Contract owner_             : 
 
