@@ -15,12 +15,14 @@
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
     "chai-bignumber": "^2.0.0",
+    "truffle-flattener": "^1.2.0",
     "truffle-hdwallet-provider": "0.0.3",
     "zeppelin-solidity": "^1.5.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "truffle test"
+    "test": "truffle test",
+    "flatten": "./node_modules/.bin/truffle-flattener ./contracts/Configurator.sol > ./deploy/contracts.sol"
   },
   "repository": {
     "type": "git",

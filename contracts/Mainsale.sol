@@ -6,17 +6,17 @@ import './StagedCrowdsale.sol';
 contract Mainsale is StagedCrowdsale, AICCommonSale {
 
   address public foundersTokensWallet;
-  
+
   address public marketingTokensWallet;
-  
+
   address public bountyTokensWallet;
-  
+
   uint public foundersTokensPercent;
 
   uint public marketingTokensPercent;
-  
+
   uint public bountyTokensPercent;
-  
+
   function setFoundersTokensPercent(uint newFoundersTokensPercent) public onlyOwner {
     foundersTokensPercent = newFoundersTokensPercent;
   }
@@ -47,7 +47,7 @@ contract Mainsale is StagedCrowdsale, AICCommonSale {
     uint tokens = _invested.mul(price).div(1 ether);
     uint valueBonusTokens = getValueBonusTokens(tokens);
     if(milestone.bonus > 0) {
-      tokens =  tokens.add(tokens.mul(milestone.bonus).div(percentRate));
+      tokens = tokens.add(tokens.mul(milestone.bonus).div(percentRate));
     }
     return tokens.add(valueBonusTokens);
   }
@@ -59,14 +59,14 @@ contract Mainsale is StagedCrowdsale, AICCommonSale {
     uint foundersTokens = allTokens.mul(foundersTokensPercent).div(percentRate);
     uint marketingTokens = allTokens.mul(marketingTokensPercent).div(percentRate);
     uint bountyTokens = allTokens.mul(bountyTokensPercent).div(percentRate);
-    mintTokens(foundersTokensWallet, foundersTokens); 
-    mintTokens(marketingTokensWallet, marketingTokens); 
-    mintTokens(bountyTokensWallet, bountyTokens); 
+    mintTokens(foundersTokensWallet, foundersTokens);
+    mintTokens(marketingTokensWallet, marketingTokens);
+    mintTokens(bountyTokensWallet, bountyTokens);
     token.finishMinting();
   }
 
   function endSaleDate() public view returns(uint) {
-    return lastSaleDate(start);    
+    return lastSaleDate(start);
   }
 
 }

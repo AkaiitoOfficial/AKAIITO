@@ -1,6 +1,6 @@
 pragma solidity 0.4.18;
 
-import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
+import './ownership/Ownable.sol';
 
 contract InputAddressFeature {
 
@@ -17,7 +17,7 @@ contract InputAddressFeature {
   function getInputAddress() internal pure returns(address) {
     if(msg.data.length == 20) {
       return bytesToAddress(bytes(msg.data));
-    } 
+    }
     return address(0);
   }
 

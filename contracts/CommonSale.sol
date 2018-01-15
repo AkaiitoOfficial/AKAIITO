@@ -1,6 +1,6 @@
 pragma solidity 0.4.18;
 
-import 'zeppelin-solidity/contracts/math/SafeMath.sol';
+import './math/SafeMath.sol';
 import './PercentRateProvider.sol';
 import './AICToken.sol';
 
@@ -32,7 +32,7 @@ contract CommonSale is PercentRateProvider {
   function setHardcap(uint newHardcap) public onlyOwner {
     hardcap = newHardcap;
   }
-  
+
   modifier onlyDirectMintAgentOrOwner() {
     require(directMintAgent == msg.sender || owner == msg.sender);
     _;
@@ -42,7 +42,7 @@ contract CommonSale is PercentRateProvider {
     require(value >= minInvestedLimit);
     _;
   }
-  
+
   function setStart(uint newStart) public onlyOwner {
     start = newStart;
   }
@@ -54,7 +54,7 @@ contract CommonSale is PercentRateProvider {
   function setDirectMintAgent(address newDirectMintAgent) public onlyOwner {
     directMintAgent = newDirectMintAgent;
   }
-  
+
   function setWallet(address newWallet) public onlyOwner {
     wallet = newWallet;
   }
@@ -100,6 +100,6 @@ contract CommonSale is PercentRateProvider {
   function () public payable {
     fallback();
   }
-  
+
 }
 

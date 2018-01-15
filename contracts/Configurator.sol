@@ -1,14 +1,13 @@
 pragma solidity 0.4.18;
 
-import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
-
+import './ownership/Ownable.sol';
 import './AICToken.sol';
 import './Presale.sol';
 import './Mainsale.sol';
 
 contract Configurator is Ownable {
 
-  AICToken public token; 
+  AICToken public token;
 
   Presale public presale;
 
@@ -25,8 +24,8 @@ contract Configurator is Ownable {
     presale.setStart(1518393600);
     presale.setPeriod(14);
     presale.setPrice(1600000000000000000000);
-    presale.setHardcap(100000000000000000000);
-    token.setSaleAgent(presale);	
+    presale.setHardcap(1000000000000000000000);
+    token.setSaleAgent(presale);
     commonConfigure(presale, token);
 
     mainsale = new Mainsale();

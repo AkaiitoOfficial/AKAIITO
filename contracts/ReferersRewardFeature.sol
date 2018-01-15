@@ -6,7 +6,7 @@ import './InputAddressFeature.sol';
 contract ReferersRewardFeature is InputAddressFeature, CommonSale {
 
   uint public refererPercent;
-  
+
   uint public referalsMinInvestLimit;
 
   function setReferalsMinInvestLimit(uint newRefereralsMinInvestLimit) public onlyOwner {

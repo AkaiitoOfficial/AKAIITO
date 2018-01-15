@@ -1,19 +1,19 @@
 pragma solidity 0.4.18;
 
-import 'zeppelin-solidity/contracts/math/SafeMath.sol';
+import './math/SafeMath.sol';
 import './PercentRateProvider.sol';
 
 contract ValueBonusFeature is PercentRateProvider {
 
   using SafeMath for uint;
- 
+
   struct ValueBonus {
     uint from;
-    uint bonus;    
+    uint bonus;
   }
 
   ValueBonus[] public valueBonuses;
-  
+
   function addValueBonus(uint from, uint bonus) public onlyOwner {
     valueBonuses.push(ValueBonus(from, bonus));
   }
@@ -37,6 +37,6 @@ contract ValueBonusFeature is PercentRateProvider {
     }
     return bonus;
   }
-  
+
 }
 

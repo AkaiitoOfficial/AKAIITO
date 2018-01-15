@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-import 'zeppelin-solidity/contracts/math/SafeMath.sol';
-import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
+import './math/SafeMath.sol';
+import './ownership/Ownable.sol';
 
 contract StagedCrowdsale is Ownable {
 
@@ -44,12 +44,12 @@ contract StagedCrowdsale is Ownable {
     require(number < milestones.length);
     Milestone storage milestone = milestones[number];
 
-    totalPeriod = totalPeriod.sub(milestone.period);    
+    totalPeriod = totalPeriod.sub(milestone.period);
 
     milestone.period = period;
     milestone.bonus = bonus;
 
-    totalPeriod = totalPeriod.add(period);    
+    totalPeriod = totalPeriod.add(period);
   }
 
   function insertMilestone(uint8 numberAfter, uint period, uint bonus) public onlyOwner {
