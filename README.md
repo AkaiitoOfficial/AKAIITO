@@ -70,12 +70,12 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ### Value bonus system
 
-* from 100 AIC bonus +3%
-* from 151 AIC bonus +5%
-* from 201 AIC bonus +8%
-* from 301 AIC bonus +10%
-* from 1001 AIC bonus +15%
-* from 1501 AIC bonus +20%
+* from 100 ETH bonus +3%
+* from 151 ETH bonus +5%
+* from 201 ETH bonus +8%
+* from 301 ETH bonus +10%
+* from 1001 ETH bonus +15%
+* from 1501 ETH bonus +20%
 
 ### Crowdsale stages
 
