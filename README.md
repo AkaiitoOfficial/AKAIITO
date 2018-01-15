@@ -18,7 +18,7 @@ Crowdsale contracts have special function to retrieve transferred in errors toke
 Also crowdsale contracts have special function to direct mint tokens in wei value (featue implemneted to support external pay gateway).
 
 ### Contracts contains
-1. _XCOINToken_ - Token contract
+1. _AICToken_ - Token contract
 2. _Presale_ - Presale contract
 3. _Mainsale_ - ICO contract
 4. _Configurator_ - contract with main configuration for production
@@ -81,7 +81,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 #### Presale
 * _Base price_                 : 1600 AIC per ETH
-* _Hardcap_                    : 1000 ETH
+* _Hardcap_                    : 10 ETH
 * _Period_                     : 14 days 
 * _Start_                      : Mon, 12 Feb 2018 00:00:00 GMT
 * _Wallet_                     : 
@@ -89,8 +89,8 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 #### ICO
 * _Base price_                 : 1000 AIC per ETH
-* _Hardcap_                    : 20 000 ETH
-* _Start_                      : Sat, 10 Mar 2018 00:00:00 GMT
+* _Hardcap_                    : 
+* _Start_                      : 
 * _Wallet_                     : 
 * _Contract owner_             : 
 
@@ -101,3 +101,74 @@ _Milestones_
 4. 7 days                      : bonus +10%
 4. 7 days                      : bonus +5%
 4. 7 days                      : wihtout bonus
+
+## Ropsten network configuration
+
+* _Minimal insvested limit_     : 0.01 ETH
+* _Price_                       : 1 ETH = 1000 AIC
+* _Bounty tokens percent_       : 2% 
+* _Founders tokens percent_     : 15% 
+* _Marketing tokens percent_    : 8% 
+* _For sale tokens percent_     : 75% 
+* _Founders tokens wallet_      : 
+* _Marketing tokens wallet_     : 
+* _Bounty tokens wallet_        : 
+
+### Links
+1. _Token_ - https://ropsten.etherscan.io/address/0x9fd1c2ba0c26bdabd777c3522abc332fe19d3f09
+2. _Presale_ - https://ropsten.etherscan.io/address/0xc0559bd19ba000304d63b57bbc945ccd22a383dd
+3. _Mainsale_ - https://ropsten.etherscan.io/address/0xef69e99d8032cd09440db59ff28f86ede89a6931
+
+### Referal system
+* _Referer percent_ - 2%
+* _Minimal investor value limit to activate referer bonus_ - 0.1 ETH
+* _Limitations_ - Investor сan't accrue bonus to himself
+
+
+### Value bonus system
+
+* from 100 ETH bonus +3%
+* from 151 ETH bonus +5%
+* from 201 ETH bonus +8%
+* from 301 ETH bonus +10%
+* from 1001 ETH bonus +15%
+* from 1501 ETH bonus +20%
+
+### Crowdsale stages
+
+#### Presale
+* _Base price_                 : 1600 AIC per ETH
+* _Hardcap_                    : 10 ETH
+* _Period_                     : 14 days 
+* _Start_                      : Sun Jan 14 2018 16:00:00 GMT
+* _Wallet_                     : 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4
+* _Contract owner_             : 0xf62158b03Edbdb92a12c64E4D8873195AC71aF6A
+
+#### ICO
+* _Base price_                 : 1000 AIC per ETH
+* _Hardcap_                    : 200 ETH
+* _Start_                      : 
+* _Wallet_                     : 0xd89626E2c4218281Ad0Fc5F22AE52dC0FF39DDC4
+* _Contract owner_             : 0xf62158b03Edbdb92a12c64E4D8873195AC71aF6A
+
+_Milestones_
+1. 2 days                      : bonus +40% 
+2. 7 days                      : bonus +30% 
+3. 7 days                      : bonus +20% 
+4. 7 days                      : bonus +10%
+4. 7 days                      : bonus +5%
+4. 7 days                      : wihtout bonus
+
+### Test audit (Presale)
+
+#### Purchasers
+* Rejected purchase below minimum investment limit (0.009 Eth), gas = 21321
+https://ropsten.etherscan.io/tx/0x461c52013465f89ada0ee78f7acec3fffa43ba3faf8d70182826605eec3426eb
+* 0.01 Eth => 19.2 tokens, gas = 122147
+https://ropsten.etherscan.io/tx/0x117843edfe9b5de0c4a0bc82ab001874767656d512ee0f28615843654fb4e8d5
+* 0.09 Eth => 172.8 tokens + 0 tokens to referrer, gas = 79382
+https://ropsten.etherscan.io/tx/0xc8c4baac250bed1fce4a279bc5c44aa0b895ea3df6f57f23a12358b2ba9bd466
+* 0.1 Eth => 192 tokens + 3.84 tokens to referrer, gas = 131657
+https://ropsten.etherscan.io/tx/0xf7cb39c3fda37561aeff1a9b1ec4c674aca7ed3c7d2ad80fa54927f0228bd110
+* Rejected purchase when investor accrued bonus to himself
+https://ropsten.etherscan.io/tx/0x898401bfc0959b7ff94b4d95f6b2c20b80a0aa42b88c69c16427e33f5cf5b223
