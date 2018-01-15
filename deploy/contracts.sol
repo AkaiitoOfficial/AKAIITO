@@ -1,6 +1,6 @@
 pragma solidity 0.4.18;
 
-// File: zeppelin-solidity/contracts/ownership/Ownable.sol
+// File: contracts/ownership/Ownable.sol
 
 /**
  * @title Ownable
@@ -44,7 +44,7 @@ contract Ownable {
 
 }
 
-// File: zeppelin-solidity/contracts/math/SafeMath.sol
+// File: contracts/math/SafeMath.sol
 
 /**
  * @title SafeMath
@@ -79,7 +79,7 @@ library SafeMath {
   }
 }
 
-// File: zeppelin-solidity/contracts/token/ERC20Basic.sol
+// File: contracts/token/ERC20Basic.sol
 
 /**
  * @title ERC20Basic
@@ -93,7 +93,7 @@ contract ERC20Basic {
   event Transfer(address indexed from, address indexed to, uint256 value);
 }
 
-// File: zeppelin-solidity/contracts/token/BasicToken.sol
+// File: contracts/token/BasicToken.sol
 
 /**
  * @title Basic token
@@ -131,7 +131,7 @@ contract BasicToken is ERC20Basic {
 
 }
 
-// File: zeppelin-solidity/contracts/token/ERC20.sol
+// File: contracts/token/ERC20.sol
 
 /**
  * @title ERC20 interface
@@ -144,7 +144,7 @@ contract ERC20 is ERC20Basic {
   event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-// File: zeppelin-solidity/contracts/token/StandardToken.sol
+// File: contracts/token/StandardToken.sol
 
 /**
  * @title Standard ERC20 token
@@ -244,9 +244,9 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/MintableToken.sol
 
 contract MintableToken is StandardToken, Ownable {
-    
+
   event Mint(address indexed to, uint256 amount);
-  
+
   event MintFinished();
 
   bool public mintingFinished = false;
@@ -289,17 +289,17 @@ contract MintableToken is StandardToken, Ownable {
   function transferFrom(address from, address to, uint256 value) public notLocked returns (bool) {
     return super.transferFrom(from, to, value);
   }
-  
+
 }
 
 // File: contracts/AICToken.sol
 
-contract AICToken is MintableToken {	
-    
+contract AICToken is MintableToken {
+
   string public constant name = "AKAI";
-   
+
   string public constant symbol = "AIC";
-    
+
   uint32 public constant decimals = 18;
 
 }
@@ -313,7 +313,7 @@ contract PercentRateProvider is Ownable {
   function setPercentRate(uint newPercentRate) public onlyOwner {
     percentRate = newPercentRate;
   }
- 
+
 }
 
 // File: contracts/CommonSale.sol
@@ -346,7 +346,7 @@ contract CommonSale is PercentRateProvider {
   function setHardcap(uint newHardcap) public onlyOwner {
     hardcap = newHardcap;
   }
-  
+
   modifier onlyDirectMintAgentOrOwner() {
     require(directMintAgent == msg.sender || owner == msg.sender);
     _;
@@ -356,7 +356,7 @@ contract CommonSale is PercentRateProvider {
     require(value >= minInvestedLimit);
     _;
   }
-  
+
   function setStart(uint newStart) public onlyOwner {
     start = newStart;
   }
@@ -368,7 +368,7 @@ contract CommonSale is PercentRateProvider {
   function setDirectMintAgent(address newDirectMintAgent) public onlyOwner {
     directMintAgent = newDirectMintAgent;
   }
-  
+
   function setWallet(address newWallet) public onlyOwner {
     wallet = newWallet;
   }
@@ -414,7 +414,7 @@ contract CommonSale is PercentRateProvider {
   function () public payable {
     fallback();
   }
-  
+
 }
 
 // File: contracts/InputAddressFeature.sol
@@ -434,7 +434,7 @@ contract InputAddressFeature {
   function getInputAddress() internal pure returns(address) {
     if(msg.data.length == 20) {
       return bytesToAddress(bytes(msg.data));
-    } 
+    }
     return address(0);
   }
 
@@ -445,7 +445,7 @@ contract InputAddressFeature {
 contract ReferersRewardFeature is InputAddressFeature, CommonSale {
 
   uint public refererPercent;
-  
+
   uint public referalsMinInvestLimit;
 
   function setReferalsMinInvestLimit(uint newRefereralsMinInvestLimit) public onlyOwner {
@@ -486,20 +486,20 @@ contract RetrieveTokensFeature is Ownable {
 contract ValueBonusFeature is PercentRateProvider {
 
   using SafeMath for uint;
- 
+
   struct ValueBonus {
     uint from;
-    uint bonus;    
+    uint bonus;
   }
 
   ValueBonus[] public valueBonuses;
-  
+
   function addValueBonus(uint from, uint bonus) public onlyOwner {
     valueBonuses.push(ValueBonus(from, bonus));
   }
 
-  function getValueBonusTokens(uint tokens) public view returns(uint) {
-    uint valueBonus = getValueBonus(tokens);
+  function getValueBonusTokens(uint tokens, uint _invested) public view returns(uint) {
+    uint valueBonus = getValueBonus(_invested);
     if(valueBonus == 0) {
       return 0;
     }
@@ -517,7 +517,7 @@ contract ValueBonusFeature is PercentRateProvider {
     }
     return bonus;
   }
-  
+
 }
 
 // File: contracts/AICCommonSale.sol
@@ -570,12 +570,12 @@ contract StagedCrowdsale is Ownable {
     require(number < milestones.length);
     Milestone storage milestone = milestones[number];
 
-    totalPeriod = totalPeriod.sub(milestone.period);    
+    totalPeriod = totalPeriod.sub(milestone.period);
 
     milestone.period = period;
     milestone.bonus = bonus;
 
-    totalPeriod = totalPeriod.add(period);    
+    totalPeriod = totalPeriod.add(period);
   }
 
   function insertMilestone(uint8 numberAfter, uint period, uint bonus) public onlyOwner {
@@ -623,17 +623,17 @@ contract StagedCrowdsale is Ownable {
 contract Mainsale is StagedCrowdsale, AICCommonSale {
 
   address public foundersTokensWallet;
-  
+
   address public marketingTokensWallet;
-  
+
   address public bountyTokensWallet;
-  
+
   uint public foundersTokensPercent;
 
   uint public marketingTokensPercent;
-  
+
   uint public bountyTokensPercent;
-  
+
   function setFoundersTokensPercent(uint newFoundersTokensPercent) public onlyOwner {
     foundersTokensPercent = newFoundersTokensPercent;
   }
@@ -662,9 +662,9 @@ contract Mainsale is StagedCrowdsale, AICCommonSale {
     uint milestoneIndex = currentMilestone(start);
     Milestone storage milestone = milestones[milestoneIndex];
     uint tokens = _invested.mul(price).div(1 ether);
-    uint valueBonusTokens = getValueBonusTokens(tokens);
+    uint valueBonusTokens = getValueBonusTokens(tokens, _invested);
     if(milestone.bonus > 0) {
-      tokens =  tokens.add(tokens.mul(milestone.bonus).div(percentRate));
+      tokens = tokens.add(tokens.mul(milestone.bonus).div(percentRate));
     }
     return tokens.add(valueBonusTokens);
   }
@@ -676,14 +676,14 @@ contract Mainsale is StagedCrowdsale, AICCommonSale {
     uint foundersTokens = allTokens.mul(foundersTokensPercent).div(percentRate);
     uint marketingTokens = allTokens.mul(marketingTokensPercent).div(percentRate);
     uint bountyTokens = allTokens.mul(bountyTokensPercent).div(percentRate);
-    mintTokens(foundersTokensWallet, foundersTokens); 
-    mintTokens(marketingTokensWallet, marketingTokens); 
-    mintTokens(bountyTokensWallet, bountyTokens); 
+    mintTokens(foundersTokensWallet, foundersTokens);
+    mintTokens(marketingTokensWallet, marketingTokens);
+    mintTokens(bountyTokensWallet, bountyTokens);
     token.finishMinting();
   }
 
   function endSaleDate() public view returns(uint) {
-    return lastSaleDate(start);    
+    return lastSaleDate(start);
   }
 
 }
@@ -698,7 +698,7 @@ contract Presale is AICCommonSale {
 
   function calculateTokens(uint _invested) internal returns(uint) {
     uint tokens = _invested.mul(price).div(1 ether);
-    return tokens.add(getValueBonusTokens(tokens));
+    return tokens.add(getValueBonusTokens(tokens, _invested));
   }
 
   function setPeriod(uint newPeriod) public onlyOwner {
@@ -723,7 +723,7 @@ contract Presale is AICCommonSale {
 
 contract Configurator is Ownable {
 
-  AICToken public token; 
+  AICToken public token;
 
   Presale public presale;
 
@@ -740,8 +740,8 @@ contract Configurator is Ownable {
     presale.setStart(1518393600);
     presale.setPeriod(14);
     presale.setPrice(1600000000000000000000);
-    presale.setHardcap(100000000000000000000);
-    token.setSaleAgent(presale);	
+    presale.setHardcap(1000000000000000000000);
+    token.setSaleAgent(presale);
     commonConfigure(presale, token);
 
     mainsale = new Mainsale();
