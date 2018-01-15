@@ -11,7 +11,7 @@ contract Presale is AICCommonSale {
 
   function calculateTokens(uint _invested) internal returns(uint) {
     uint tokens = _invested.mul(price).div(1 ether);
-    return tokens.add(getValueBonusTokens(tokens));
+    return tokens.add(getValueBonusTokens(tokens, _invested));
   }
 
   function setPeriod(uint newPeriod) public onlyOwner {
