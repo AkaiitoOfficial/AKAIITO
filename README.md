@@ -195,9 +195,9 @@ https://ropsten.etherscan.io/tx/0x3799f807d864b2751c91e009d0ba1740c4efbc7053b941
 * _Founders tokens percent_     : 15% 
 * _Marketing tokens percent_    : 8% 
 * _For sale tokens percent_     : 75% 
-* _Founders tokens wallet_      : 
-* _Marketing tokens wallet_     : 
-* _Bounty tokens wallet_        : 
+* _Founders tokens wallet_      : 0x796b57f96cb7661654981032a5f53047a560e3e0
+* _Marketing tokens wallet_     : 0xDa67155b22973bE05Bcd28c07107b2E17314A1e2
+* _Bounty tokens wallet_        : 0xA0B1Bd7827C070F29b5aBa47e7B73FF4EfA00a57
 
 ### Links
 1. _Token_ - https://ropsten.etherscan.io/address/0x00a830c088d013824c80c35d8d037c7740cdcaa8
