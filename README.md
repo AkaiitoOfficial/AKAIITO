@@ -200,9 +200,9 @@ https://ropsten.etherscan.io/tx/0x3799f807d864b2751c91e009d0ba1740c4efbc7053b941
 * _Bounty tokens wallet_        : 
 
 ### Links
-1. _Token_ - https://ropsten.etherscan.io/address/0x9fd1c2ba0c26bdabd777c3522abc332fe19d3f09
-2. _Presale_ - https://ropsten.etherscan.io/address/0xc0559bd19ba000304d63b57bbc945ccd22a383dd
-3. _Mainsale_ - https://ropsten.etherscan.io/address/0xef69e99d8032cd09440db59ff28f86ede89a6931
+1. _Token_ - https://ropsten.etherscan.io/address/0x00a830c088d013824c80c35d8d037c7740cdcaa8
+2. _Presale_ - https://ropsten.etherscan.io/address/0xf29db9c6fd7d9fb1a65b6392d0c6086a513f9d7f
+3. _Mainsale_ - https://ropsten.etherscan.io/address/0x2ca9a0cdcef62ccb3d4254ee673dc1aa1e0061cc
 
 ### Referal system
 * _Referer percent_ - 2%
