@@ -106,9 +106,9 @@ _Milestones_
 
 * _Minimal insvested limit_     : 0.01 ETH
 * _Price_                       : 1 ETH = 1000 AIC
-* _Bounty tokens percent_       : 2% 
+* _Bounty tokens percent_       : 3% 
 * _Founders tokens percent_     : 15% 
-* _Marketing tokens percent_    : 8% 
+* _Marketing tokens percent_    : 7% 
 * _For sale tokens percent_     : 75% 
 * _Founders tokens wallet_      : 
 * _Marketing tokens wallet_     : 
