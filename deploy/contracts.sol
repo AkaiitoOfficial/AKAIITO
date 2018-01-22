@@ -760,8 +760,8 @@ contract Configurator is Ownable {
     mainsale.setStart(1520640000);
     mainsale.setHardcap(20000000000000000000000);
     mainsale.setFoundersTokensPercent(15);
-    mainsale.setMarketingTokensPercent(8);
-    mainsale.setBountyTokensPercent(2);
+    mainsale.setMarketingTokensPercent(7);
+    mainsale.setBountyTokensPercent(3);
     commonConfigure(mainsale, token);
 
     presale.setMainsale(mainsale);
