@@ -70,7 +70,9 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ### Value bonus system
 
-* from 100 ETH bonus +3%
+* from 10 ETH bonus +1%
+* from 51 ETH bonus +2%
+* from 101 ETH bonus +3%
 * from 151 ETH bonus +5%
 * from 201 ETH bonus +8%
 * from 301 ETH bonus +10%
