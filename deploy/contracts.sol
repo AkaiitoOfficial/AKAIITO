@@ -773,7 +773,9 @@ contract Configurator is Ownable {
 
   function commonConfigure(address saleAddress, address _token) internal {
      AICCommonSale sale = AICCommonSale(saleAddress);
-     sale.addValueBonus(100000000000000000000, 3);
+     sale.addValueBonus(10000000000000000000, 1);
+     sale.addValueBonus(51000000000000000000, 2);
+     sale.addValueBonus(101000000000000000000, 3);
      sale.addValueBonus(151000000000000000000, 5);
      sale.addValueBonus(201000000000000000000, 8);
      sale.addValueBonus(301000000000000000000, 10);
