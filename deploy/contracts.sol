@@ -783,7 +783,7 @@ contract Configurator is Ownable {
      sale.addValueBonus(1501000000000000000000, 20);
      sale.setReferalsMinInvestLimit(10000000000000000000);
      sale.setRefererPercent(2);
-     sale.setMinInvestedLimit(10000000000000000);
+     sale.setMinInvestedLimit(5000000000000000);
      sale.setToken(_token);
   }
 
