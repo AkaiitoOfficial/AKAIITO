@@ -33,7 +33,7 @@ Contract manager must call finishMinting after each crowdsale milestone!
 To support external mint service manager should specify address by calling _setDirectMintAgent_. After that specified address can direct mint VST tokens by calling _directMint_.
 
 ### How to invest
-To purchase tokens investor should send ETH (more than minimum 0.01 ETH) to corresponding crowdsale contract.
+To purchase tokens investor should send ETH (more than minimum 0.005 ETH) to corresponding crowdsale contract.
 Recommended GAS: 250000, GAS PRICE - 21 Gwei.
 
 ### Wallets with ERC20 support
@@ -47,7 +47,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 ## Main network configuration
 
-* _Minimal insvested limit_     : 0.01 ETH
+* _Minimal insvested limit_     : 0.005 ETH
 * _Price_                       : 1 ETH = 1000 AIC
 * _Bounty tokens percent_       : 3% 
 * _Founders tokens percent_     : 15% 
@@ -91,7 +91,7 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 
 #### ICO
 * _Base price_                 : 1000 AIC per ETH
-* _Hardcap_                    : 20 000 ETH
+* _Hardcap_                    : 25 000 ETH
 * _Start_                      : Sat, 10 Mar 2018 00:00:00 GMT
 * _Wallet_                     : 
 * _Contract owner_             : 
