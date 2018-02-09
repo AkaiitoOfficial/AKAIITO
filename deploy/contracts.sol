@@ -758,7 +758,7 @@ contract Configurator is Ownable {
     mainsale.setMarketingTokensWallet(0x95EA6A4ec9F80436854702e5F05d238f27166A05);
     mainsale.setBountyTokensWallet(0x95EA6A4ec9F80436854702e5F05d238f27166A04);
     mainsale.setStart(1520640000);
-    mainsale.setHardcap(20000000000000000000000);
+    mainsale.setHardcap(25000000000000000000000);
     mainsale.setFoundersTokensPercent(15);
     mainsale.setMarketingTokensPercent(7);
     mainsale.setBountyTokensPercent(3);
