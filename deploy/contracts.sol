@@ -730,14 +730,14 @@ contract Configurator is Ownable {
   Mainsale public mainsale;
 
   function deploy() public onlyOwner {
-    //owner = 0x95EA6A4ec9F80436854702e5F05d238f27166A03;
+    //owner = 0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1;
 
     token = new AICToken();
 
     presale = new Presale();
 
-    presale.setWallet(0x95EA6A4ec9F80436854702e5F05d238f27166A03);
-    presale.setStart(1518393600);
+    presale.setWallet(0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1);
+    presale.setStart(1518386400);
     presale.setPeriod(14);
     presale.setPrice(1600000000000000000000);
     presale.setHardcap(1000000000000000000000);
@@ -753,11 +753,11 @@ contract Configurator is Ownable {
     mainsale.addMilestone(7, 5);
     mainsale.addMilestone(7, 0);
     mainsale.setPrice(1000000000000000000000);
-    mainsale.setWallet(0x95EA6A4ec9F80436854702e5F05d238f27166A03);
-    mainsale.setFoundersTokensWallet(0x95EA6A4ec9F80436854702e5F05d238f27166A05);
-    mainsale.setMarketingTokensWallet(0x95EA6A4ec9F80436854702e5F05d238f27166A05);
-    mainsale.setBountyTokensWallet(0x95EA6A4ec9F80436854702e5F05d238f27166A04);
-    mainsale.setStart(1520640000);
+    mainsale.setWallet(0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1);
+    mainsale.setFoundersTokensWallet(0x8C15936004201bC6440a1F0BBD1eC92CA6C611de);
+    mainsale.setMarketingTokensWallet(0x778375eB9fA010e95c40EA74ED7591356B4F4F4C);
+    mainsale.setBountyTokensWallet(0xB5DDDBC8e53bA411451eE22FE4E1852e5a5d447f);
+    mainsale.setStart(1520632800);
     mainsale.setHardcap(25000000000000000000000);
     mainsale.setFoundersTokensPercent(15);
     mainsale.setMarketingTokensPercent(7);
