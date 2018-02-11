@@ -53,14 +53,14 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Founders tokens percent_     : 15% 
 * _Marketing tokens percent_    : 7% 
 * _For sale tokens percent_     : 75% 
-* _Founders tokens wallet_      :  
-* _Marketing tokens wallet_     :  
-* _Bounty tokens wallet_        : 
+* _Founders tokens wallet_      :  0x8C15936004201bC6440a1F0BBD1eC92CA6C611de
+* _Marketing tokens wallet_     :  0x778375eB9fA010e95c40EA74ED7591356B4F4F4C
+* _Bounty tokens wallet_        : 0xB5DDDBC8e53bA411451eE22FE4E1852e5a5d447f
 
 ### Links
-1. _Token_ -
-2. _Presale_ -
-3. _Mainsale_ -
+1. _Token_ - 0x7ca936344d234034cf6936472d6bedbe8ae6667f
+2. _Presale_ - 0x12a9dd34e8e7412f9e219fd889d23abc02ba0de5
+3. _Mainsale_ - 0x1771e600e72cca46abeab857f301b6bf5a032ca7
 
 ### Referal system
 * _Referer percent_ - 2%
@@ -86,15 +86,15 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 * _Hardcap_                    : 1000 ETH
 * _Period_                     : 14 days 
 * _Start_                      : Mon, 12 Feb 2018 00:00:00 GMT
-* _Wallet_                     : 
-* _Contract owner_             : 
+* _Wallet_                     : 0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1
+* _Contract owner_             : 0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1
 
 #### ICO
 * _Base price_                 : 1000 AIC per ETH
 * _Hardcap_                    : 25 000 ETH
 * _Start_                      : Sat, 10 Mar 2018 00:00:00 GMT
-* _Wallet_                     : 
-* _Contract owner_             : 
+* _Wallet_                     : 0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1
+* _Contract owner_             : 0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1
 
 _Milestones_
 1. 2 days                      : bonus +40% 
