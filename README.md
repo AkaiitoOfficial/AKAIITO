@@ -92,8 +92,8 @@ Investor must not use other wallets, coinmarkets or stocks. Can lose money.
 #### ICO
 * _Base price_                 : 1000 AIC per ETH
 * _Hardcap_                    : 25 000 ETH
-* _Start_                      : Sat, 10 Mar 2018 00:00:00 GMT
-* _Wallet_                     : 0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1
+* _Start_                      : Sat, 12 Mar 2018 00:00:00 GMT
+* _Wallet_                     : 0xD5aC604022b9D9953e3ad68Da24e87C7Fb5ED557
 * _Contract owner_             : 0x78bcb8dB92462D3c2f6604d697C6edAAe96015b1
 
 _Milestones_
